@@ -1,0 +1,169 @@
+
+html {
+  height:100%;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, rgb(46, 46, 46) 50%, rgb(36, 40, 42) 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+
+
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  
+  width: 500px;
+  height: 700px;
+
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding-top: 10px;
+}
+
+.container1{
+height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+opacity: 0.9;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+}
+
+h3 {
+  margin: 0;
+  font-size: 40px;
+}
+
+.answer-container {
+  width: 100%;
+  text-align: center;
+}
+
+input {
+  text-align: center;
+  width: 30%;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: large;
+  display: block;
+  width: 30%;
+  padding: 10px;
+  background-color: #206220;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.horizontal-container {
+  display: flex;
+  justify-content: center}
+  
+
+button:hover {
+  background-color: #339b43;
+}
+
+#result {
+  text-align: center;
+  font-size: 24px;
+}
+
+.checkmark {
+  color: transparent;
+  animation: checkmark 0.5s ease;
+}
+
+.cross {
+  color: transparent;
+  animation: cross 0.5s ease;
+}
+
+.restart-button {
+  display: inline-block;
+  background-color: #fff;
+  color: #333;
+  padding: 15px 30px;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 30px;
+}
+
+.question-container1{
+  display: flex;
+  justify-content: center;
+
+}
+
+.question-image{
+  width: 90%;
+  height: 500px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+#userInput{
+width: 200px;
+height: 20px;
+font-size: 20px;
+}
+
+.final-score{
+
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 17px;
+}
+
+.score{margin: 0;}
+.list{margin: 0;}

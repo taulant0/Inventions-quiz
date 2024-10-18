@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invention Quiz</title>
+  <link rel="stylesheet" href="/styles/main.css">
+  <style>
+    .correct {
+      color: green;
+    }
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+<body id="app">
+  <div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
+<div class="container1">
+  <form class="container" action="/submit" method="post">
+   
+
+    <% if (!gameOver) { %>
+      <div class="question-container">
+        <div class="horizontal-container">
+          <h3>
+            Who invented the
+           
+          </h3>
+        </div>
+        <h1 id="inventionName">
+          <%= question.invention  %>?
+        </h1>
+        <div class="question-container1">
+          <!-- Display the image -->
+          <img src="<%= question.image %>" alt="Image for <%= question.invention %>" class="question-image">
+        </div>
+      </div>
+
+      <div class="answer-container">
+        <input type="text" name="answer" id="userInput" placeholder="Enter the inventor" autofocus autocomplete="off">
+      </div>
+      <div class="container1">
+      <button type="submit">SUBMIT</button>
+    <% } else { %>
+      <h1>Game Over!</h1>
+      <div class="container1">
+        <h2 class="score">Final Score: <%= totalScore %></h2>
+
+      </div>
+
+      <div class="container1">
+      <h3>Question Results:</h3>
+      </div>
+      <div class="container1">
+      <ol class="list">
+        <% responses.forEach(response => { %>
+          <div class="final-score">
+          <li>
+            <strong>Invention:</strong> <%= response.invention %><br>
+            <strong>Your Answer:</strong> 
+            <span class="<%= response.correct ? 'correct' : 'incorrect' %>">
+              <%= response.userAnswer %>
+            </span><br>
+            <strong>Correct Answer:</strong> <%= response.correctAnswer %><br>
+          </li>
+        </div>
+        <% }) %>
+      </ol>
+      </div>
+      
+      <a href="/" class="restart-button">Restart</a>
+    <% } %>
+  </form>
+</div>
+</div>
+  <script>
+    var wasCorrect = "<%= locals.wasCorrect %>";
+    console.log(wasCorrect);
+    if (wasCorrect === "false" && !document.querySelector('.question-container')) {
+      alert('Game over! Final best score: <%= totalScore %>');
+    }
+  </script>
+</body>
+</html>
+
+

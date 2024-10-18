@@ -2,26 +2,12 @@ import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
 
-
-const connectionString = 'postgresql://quiz_kvpf_user:2beTuPJH93zKc9K4JJATqPuy0cKGywNP@dpg-cs8pthlsvqrc739l62vg-a.oregon-postgres.render.com/quiz_kvpf';
-
-
 const db = new pg.Client({
   user: "postgres",
   host: "localhost",
   database: "world",
   password: "EmbeddedSystems",
   port: 5432,
-
-  connectionString: connectionString,
-});
-
-db.connect(err => {
-  if (err) {
-    console.error("Database connection error:", err.stack);
-  } else {
-    console.log("Connected to the database");
-  }
 });
 
 const app = express();
